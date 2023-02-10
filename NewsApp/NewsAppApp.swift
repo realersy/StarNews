@@ -1,17 +1,14 @@
-//
-//  NewsAppApp.swift
-//  NewsApp
-//
-//  Created by Ersan Shimshek on 10.02.2023.
-//
-
 import SwiftUI
 
 @main
-struct NewsAppApp: App {
+struct XCANewsApp: App {
+    
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(articleBookmarkVM)
         }
     }
 }
